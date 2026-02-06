@@ -1,0 +1,107 @@
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Valentine Week for Chikoo 💖</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: 'Poppins', Arial, sans-serif;
+      background: linear-gradient(135deg, #ffdde1, #ee9ca7);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #333;
+      padding: 20px;
+    }
+    .card {
+      background: #fff;
+      width: 100%;
+      max-width: 480px;
+      padding: 26px;
+      border-radius: 22px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+      text-align: center;
+      animation: pop 0.8s ease;
+    }
+    @keyframes pop {
+      from { transform: scale(0.85); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+    h1 { color: #e63946; margin-bottom: 10px; }
+    p { font-size: 14px; line-height: 1.6; }
+    input {
+      padding: 10px;
+      width: 80%;
+      border-radius: 20px;
+      border: 1px solid #ccc;
+      text-align: center;
+      margin-top: 10px;
+      font-size: 14px;
+    }
+    button {
+      margin-top: 15px;
+      padding: 10px 22px;
+      border: none;
+      border-radius: 25px;
+      background: #e63946;
+      color: #fff;
+      font-size: 14px;
+      cursor: pointer;
+    }
+    .lock { font-size: 40px; margin: 10px 0; }
+    .day {
+      display: none;
+      margin-top: 18px;
+      padding: 15px;
+      border-radius: 15px;
+      background: #fff0f3;
+      font-size: 14px;
+    }
+    footer { margin-top: 15px; font-size: 12px; color: #888; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>Valentine Week 💕</h1>
+    <div class="lock">🔒</div>
+    <p>Hey <b>Chikoo</b> 🧸<br>Each day is locked for you 💖<br>Enter the password to open today’s surprise ✨</p><input type="password" id="password" placeholder="Enter password (DD/MM/YYYY)" />
+<br>
+<button onclick="unlock()">Unlock 💌</button>
+
+<!-- DAYS -->
+<div class="day" id="day1">🌹 <b>Rose Day</b><br>Chikoo, aapki meri life ka sabse pyaara rose ho 🤍</div>
+  <div class="day" id="day2">💌 <b>Propose Day</b><br>aapka saath choose karna har din easy lagta hai 🫶</div>
+<div class="day" id="day3">🍫 <b>Chocolate Day</b><br>aapki meri life ka sweetest part ho 🍫🤍</div>
+<div class="day" id="day4">🧸 <b>Teddy Day</b><br>Jab comfort chahiye, aapki yaad aate ho 🧸</div>
+<div class="day" id="day5">🤝 <b>Promise Day</b><br>Main hamesha aapkihare saath rehne ka promise karti hoon 🤍</div>
+<div class="day" id="day6">🤗 <b>Hug Day</b><br>Door hoke bhi ek warm hug aapkihare liye 🫂</div>
+<div class="day" id="day7">❤️ <b>Valentine’s Day</b><br>Happy Valentine’s Day, Chikoo 💖 You mean a lot to me 🥹</div>
+
+<footer>Made with 💕 only for you</footer>
+
+  </div>  <script>
+    const correctPassword = "06/09/2025";
+
+    function unlock() {
+      const input = document.getElementById('password').value;
+      if (input !== correctPassword) {
+        alert('Wrong password 🥺');
+        return;
+      }
+
+      const today = new Date().getDate();
+      const startDay = 7; // Feb 7
+      const index = today - startDay + 1;
+
+      if (index < 1 || index > 7) {
+        alert('Today’s surprise is still locked 💕');
+        return;
+      }
+
+      document.getElementById('day' + index).style.display = 'block';
+    }
+  </script></body>
+</html>
